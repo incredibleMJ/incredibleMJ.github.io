@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'SJWAYAOR88',
+      apiKey: '832d853865b76e86e906b01f568341a7',
+      indexName: 'MJ2009_Hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="atomic 线程安全吗 https://blog.csdn.net/u012160319/article/details/89399940不安全 只是getter setter安全 但还有release等操作不一定安全">
+<meta name="keywords" content="iOS,Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.6月 面试准备">
+<meta property="og:url" content="https://incrediblemj.github.io/2019/06/28/面试准备/index.html">
+<meta property="og:site_name" content="MJ2009">
+<meta property="og:description" content="atomic 线程安全吗 https://blog.csdn.net/u012160319/article/details/89399940不安全 只是getter setter安全 但还有release等操作不一定安全">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-08T09:22:57.820Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.6月 面试准备">
+<meta name="twitter:description" content="atomic 线程安全吗 https://blog.csdn.net/u012160319/article/details/89399940不安全 只是getter setter安全 但还有release等操作不一定安全">
+
+
+
+
+
+
+  <link rel="canonical" href="https://incrediblemj.github.io/2019/06/28/面试准备/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>2019.6月 面试准备 | MJ2009</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MJ2009</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+</li>
+
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://incrediblemj.github.io/2019/06/28/面试准备/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MJ2009">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MJ2009">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2019.6月 面试准备</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-28T15:35:28+08:00">2019-06-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/28/面试准备/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/面试准备/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><p>atomic 线程安全吗 <a href="https://blog.csdn.net/u012160319/article/details/89399940" target="_blank" rel="noopener">https://blog.csdn.net/u012160319/article/details/89399940</a><br>不安全 只是getter setter安全 但还有release等操作不一定安全</p>
+<a id="more"></a></li>
+<li><p>frame bounds区别<br>坐标系不一样</p>
+</li>
+<li><p>weak hashmap<br>对象地址的哈希值为key<br>所有指向该对象的weak指针数组为value<br>dealloc置nil</p>
+</li>
+<li><p>GCD 常用api<br>dispatch_queue_create<br>main_queue global_queue<br>dispatch_after<br>dispatch_group<br>dispatch_semaphore<br>dispatch_once</p>
+</li>
+<li><p>swift5 特性 <a href="https://mp.weixin.qq.com/s/-fLVdoTz3lT5Kxnea0-Avg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/-fLVdoTz3lT5Kxnea0-Avg</a><br>字符串 #”abc”#<br>@dynamicCallable<br>try? 多层嵌套只返回一层可选值<br>标准库增加Result类型枚举</p>
+</li>
+<li><p>为什么值赋值比引用性能好<br>不用开辟 管理 释放内存 copy 扩容</p>
+</li>
+<li><p>defer<br>函数return前block一定执行</p>
+</li>
+<li><p>悬垂指针 野指针<br>悬垂指针: 指向不可用内存地址的指针<br>野指针: 未初始化的指针</p>
+</li>
+<li><p>final修饰方法<br>子类不可重写</p>
+</li>
+<li><p>swift 不用继承怎么提供方法实现<br>extension ?</p>
+</li>
+<li><p>信号量 <a href="https://www.cnblogs.com/yajunLi/p/6274282.html" target="_blank" rel="noopener">https://www.cnblogs.com/yajunLi/p/6274282.html</a><br>可用来控制访问资源的数量的标识，设定了一个信号量，在线程访问之前，加上信号量的处理，则可告知系统按照我们指定的信号量数量来执行多个线程<br>dispatch_semaphore_create（信号量值）<br>dispatch_semaphore_wait（信号量，等待时间）<br>dispatch_semaphore_signal(信号量)</p>
+</li>
+<li><p>collectionView代理方法和tableview有什么不同<br>layoutDelegate<br>supplementView</p>
+</li>
+</ul>
+<ul>
+<li><p>tcp udp优缺点及使用场景 <a href="https://blog.csdn.net/caodiandxiaohe/article/details/27298161" target="_blank" rel="noopener">https://blog.csdn.net/caodiandxiaohe/article/details/27298161</a><br>TCP: 可靠 稳定(三次握手 四次挥手)  慢 效率低 场景：网络通讯质量有要求 要求可靠性的应用 (浏览器 QQ文件传输)<br>UDP: 快 稍安全 不可靠 不稳定 场景: 网络通讯质量要求不高  要求通讯速度尽可能快 (QQ语言 QQ视频)</p>
+</li>
+<li><p>三次握手 四次挥手 <a href="https://blog.csdn.net/qq_38950316/article/details/81087809" target="_blank" rel="noopener">https://blog.csdn.net/qq_38950316/article/details/81087809</a></p>
+</li>
+<li><p>内存管理<br>Objective-C的内存管理主要有三种方式ARC(自动内存计数)、手动内存计数、内存池。</p>
+</li>
+</ul>
+<ol>
+<li>自动内存计数ARC：由Xcode自动在App编译阶段，在代码中添加内存管理代码。</li>
+<li>手动内存计数MRC：遵循内存谁申请、谁释放；谁添加，谁释放的原则。</li>
+<li>内存释放池Release Pool：把需要释放的内存统一放在一个池子中，当池子被抽干后(drain)，池子中所有的内存空间也被自动释放掉。内存池的释放操作分为自动和手动。自动释放受runloop机制影响</li>
+</ol>
+<ul>
+<li>定时器什么时候销毁，一些通知，KVO放在哪里销毁 <a href="https://juejin.im/post/5b289cebe51d4558b10a7bcf" target="_blank" rel="noopener">https://juejin.im/post/5b289cebe51d4558b10a7bcf</a><br>timer：didMoveToParentViewController / 自定义timer<br>通知 KVO：dealloc</li>
+</ul>
+<p>精准timer：</p>
+<figure class="highlight plain"><figcaption><span>interval </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)); </span><br><span class="line">dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), interval * NSEC_PER_SEC, 0); </span><br><span class="line">dispatch_source_set_event_handler(_timer, ^&#123; NSLog(@&quot;GCD timer test&quot;); &#125;); </span><br><span class="line">dispatch_resume(_timer);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>KVO底层实现 <a href="https://www.jianshu.com/p/829864680648" target="_blank" rel="noopener">https://www.jianshu.com/p/829864680648</a><br>NSKVONotifying_<br>willChangeValueForKey<br>didChangevlueForKey<br>observeValueForKey:ofObject:change:context:</p>
+</li>
+<li><p>三种Block <a href="https://blog.csdn.net/Mo_Mo123/article/details/77923634" target="_blank" rel="noopener">https://blog.csdn.net/Mo_Mo123/article/details/77923634</a><br>NSStackBlock存储于栈区<br>NSGlobalBlock存储于程序数据区<br>NSMallocBlock存储于堆区</p>
+</li>
+</ul>
+<p>如果一个blcok引用了外部变量是栈block，则其不引用外部变量就成为了静态blcok。<br>如果一个block引用了外部变量是堆block，则其不引用外部变量就成为了静态block。</p>
+<ul>
+<li>notification，delegate，block的区别 <a href="https://xiusl.me/2019/04/02/block-delegate-notification/" target="_blank" rel="noopener">https://xiusl.me/2019/04/02/block-delegate-notification/</a></li>
+<li><em>特点和区别*</em></li>
+</ul>
+<p>1.block 简单易用，可以直接访问上下文的变量，不需要额外存储临时变量，代码阅读连续。<br>2.delegate 比较复杂，需要声明和实现接口，而且两者不在同一文件中，需要跳转文件，还可能需要存储临时变量。<br>3.notification 较为复杂，需要定义通知类型，同样通知的发送和接收不在一个文件中。<br><strong>问题</strong><br>1.block 虽然简单，但会存在循环引用的问题。<br>2.delegate 需要对方法进行检验 respondsToSelector:。<br>3.notification 需要注意他的多对多特性，通知的移除（iOS 9 之后不需要？）。<br>4.delegate 的运行成本低，block 的运行成本高，block 在出栈的时候需要将使用的数据从栈区拷贝到堆区，而 delegate 只是保存一个指针而已。<br><strong>场景</strong><br>-当只有1、2个回调时使用 block，3个以上的话使用 delegate。<br>-避免循环引用的时候使用 delegate。<br>-根据回调的性质来选择<br>-回调不定期触发，或者会多次触发，delegate 更加合适。<br>-回调是一次性的，单线性（一对一这种）的关系，block 更加合适。<br>-回调是广播性质的，需要多个类同时收到，notification 更加合适。<br><strong>总结</strong><br>    通过不同执行线（一对一，一对多）、不同的执行次数、不同的执行数量来判断使用哪一种回调。</p>
+<ul>
+<li>离屏渲染 <a href="https://www.jianshu.com/p/cff0d1b3c915" target="_blank" rel="noopener">https://www.jianshu.com/p/cff0d1b3c915</a></li>
+<li><em>造成离屏渲染*</em></li>
+</ul>
+<ul>
+<li>为图层设置遮罩（layer.mask）</li>
+<li>将图层的layer.masksToBounds / view.clipsToBounds属性设置为true</li>
+<li>为图层设置阴影（layer.shadow *）。</li>
+<li>为图层设置layer.shouldRasterize=true</li>
+</ul>
+<p><strong>1、圆角优化</strong><br>使用贝塞尔曲线UIBezierPath和Core Graphics框架画出一个圆角<br>✅使用CAShapeLayer和UIBezierPath设置圆角 (直接提交到GPU渲染 内存消耗少 效率高)<br><strong>2、shadow优化</strong><br>通过设置shadowPath来优化性能</p>
+<ul>
+<li><p>轮播图实现要点<br>UIcollectionView 首尾追加/数据源*100</p>
+</li>
+<li><p>推送 <a href="https://juejin.im/entry/5b4d4eba5188257bcc165e07" target="_blank" rel="noopener">https://juejin.im/entry/5b4d4eba5188257bcc165e07</a></p>
+</li>
+<li><p><em>本地push*</em><br>iOS10以前弹出<br>presentLocalNotificationNow<br>scheduleLocalNotification</p>
+</li>
+</ul>
+<p>iOS10以后弹出</p>
+<figure class="highlight plain"><figcaption><span>*center </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    UNMutableNotificationContent *content = [UNMutableNotificationContent new];</span><br><span class="line">    content.title = [NSString localizedUserNotificationStringForKey:@&quot;key1&quot; arguments:nil];</span><br><span class="line">    content.body = [NSString localizedUserNotificationStringForKey:@&quot;body&quot; arguments:nil];</span><br><span class="line">    content.sound = [UNNotificationSound defaultSound];</span><br><span class="line">    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:3 repeats:NO];</span><br><span class="line">    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@&quot;id1&quot; content:content trigger:trigger];</span><br><span class="line">    [center addNotificationRequest:request withCompletionHandler:nil];</span><br><span class="line"></span><br><span class="line">UNCalendarNotificationTrigger</span><br><span class="line">UNTimeIntervalNotificationTrigger</span><br><span class="line">UNLocationNotificationTrigger</span><br><span class="line">UNPushNotificationTrigger</span><br></pre></td></tr></table></figure>
+
+<p>iOS10以前处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">didReceiveLocalNotification：UILocalNotification</span><br></pre></td></tr></table></figure>
+
+<p><strong>远程push</strong><br>device Token去重<br>iOS7以前处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:</span><br></pre></td></tr></table></figure>
+
+<p>iOS10以后处理</p>
+<figure class="highlight plain"><figcaption><span>*)response withCompletionHandler:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">willPresentNotification:(UNNotification *)notification withCompletionHandler:</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>runtime <a href="https://www.jianshu.com/p/6ebda3cd8052" target="_blank" rel="noopener">https://www.jianshu.com/p/6ebda3cd8052</a><br>obj-&gt;isa-&gt;class-&gt;cache-&gt;method-&gt;imp<br>obj-&gt;isa-&gt;class-&gt;method list-&gt;method-&gt;imp<br>obj-&gt;isa-&gt;class-&gt;method list-&gt;superclass-&gt;method-&gt;imp</p>
+<p>  ⁃    消息传递<br>objc_class<br>objc_object<br>Meta Class<br>objc_method<br>objc_selector<br>IMP<br>objc_cache<br>objc_category</p>
+<p>  ⁃    消息转发<br>resolveInstanceMethod/resolveClassMethod<br>forwardingTargetForSelector<br>methodSignatureForSelector-&gt; forwardInvocation<br>doesNotRecognizeSelector</p>
+<p>  ⁃    常见应用<br>  •    关联对象<br>  •    method-swizzling</p>
+<ul>
+<li>方法添加class_addMethod</li>
+<li>方法替换<br>⁃    class_getInstanceMethod<br>⁃    method_getImplementation<br>⁃    class_addMethod<br>⁃    class_replaceMethod<br>⁃    method_exchangeImplementations<br>•    isa-swizzling (KVO)<br>⁃    A-&gt;NSKVONotifying_A-&gt;重写setter<br>⁃    willChangeValueForKey-&gt; didChangeValueForKey-&gt; observeValueForKey:ofObject:change:context<br>•    消息转发解决bug(JSPatch)<br>•    实现NSCoding自动归档和解档<br>•    字典转模型</li>
+</ul>
+</li>
+<li><p>关联对象原理 <a href="https://www.meiwen.com.cn/subject/eiybeqtx.html" target="_blank" rel="noopener">https://www.meiwen.com.cn/subject/eiybeqtx.html</a><br>内存地址的按位取反获得的补码作为键<br>AssociationsManager<br>AssociationsHashMap<br>ObjectAssociationMap<br>ObjcAssociatio</p>
+</li>
+<li><p>方法交换原理 <a href="https://www.jianshu.com/p/6bcff1f9feee" target="_blank" rel="noopener">https://www.jianshu.com/p/6bcff1f9feee</a><br>class_getInstanceMethod<br>method_getImplementation<br>class_addMethod<br>class_replaceMethod </p>
+</li>
+</ul>
+<p>method_exchangeImplementations</p>
+<ul>
+<li><p>runloop <a href="https://blog.ibireme.com/2015/05/18/runloop" target="_blank" rel="noopener">https://blog.ibireme.com/2015/05/18/runloop</a><br>do-while<br>与线程一一对应(第一次获取创建 线程结束销毁)<br>mode(common) observer timer source(0signal标记 wake up唤醒 1主动唤醒)<br>mach_msg<br>AutoreleasePool(observer: entry-&gt;push ,before waiting-&gt; pop push ,exit-&gt; pop )<br>事件响应(Source1 iokit-&gt;iohidevent-&gt;springboard-&gt;macn_port-&gt;app-&gt;uievent)<br>手势识别(Observer before waiting )<br>界面更新(Observer before waiting exit 遍历所有待处理的 UIView/CAlayer)<br>定时器(CFRunLoopTimerRef)<br>PerformSelecter(timer-&gt;线程的runloop)<br>asdk/texture(Observer before waiting exit 遍历)</p>
+</li>
+<li><p>多线程 <a href="http://xuyafei.cn/post/draft/ios-thread" target="_blank" rel="noopener">http://xuyafei.cn/post/draft/ios-thread</a><br>PTheard<br>NSThread<br>GCD<br>NSOperation(NSBlockOperation NSInvocationOperation NSOperationQueue)</p>
+</li>
+<li><p>锁 <a href="https://www.jianshu.com/p/ddbe44064ca4" target="_blank" rel="noopener">https://www.jianshu.com/p/ddbe44064ca4</a><br>互斥锁 防止两条线程同时对同一公共资源进行读写的机制。NSLock，pthread_mutex, @synchronized</p>
+</li>
+</ul>
+<p>递归锁 递归锁有一个特点，就是同一个线程可以加锁N次而不会引发死锁。 NSRecursiveLock, 2.pthread_mutex(recursive):</p>
+<p>自旋锁 线程反复检查锁变量是否可用。由于线程在这一过程中保持执行，因此是一种忙等待。一旦获取了自旋锁，线程会一直保持该锁，直至显式释放自旋锁。 OSSpinLock</p>
+<p>信号量：一种同步方式 信号量可以有更多的取值空间，用来实现更加复杂的同步，而不单单是线程间互斥。 dispatch_semaphore</p>
+<p>条件锁 就是条件变量，当进程的某些资源要求不满足时就进入休眠，也就是锁住了。当资源被分配到了，条件锁打开，进程继续运行。 NSCondition, NSConditionLock 遵循NSLocking协议，使用的时候同样是lock,unlock加解锁，wait是傻等，waitUntilDate:方法是等一会，都会阻塞掉线程，signal是唤起一个在等待的线程，broadcast是广播全部唤起。</p>
+<p>读写锁<br>//加读锁<br>pthread_rwlock_rdlock(&amp;rwlock);<br>//解锁<br>pthread_rwlock_unlock(&amp;rwlock);<br>//加写锁<br>pthread_rwlock_wrlock(&amp;rwlock);<br>//解锁<br>pthread_rwlock_unlock(&amp;rwlock);</p>
+<p>@synchronized结构在工作时为传入的对象分配了一个递归锁，其他内容可参阅文档</p>
+<p>NSLock<br>NSConditionLock<br>NSRecursiveLock<br>NSCondition<br>@synchronized<br>dispatch_semaphore<br>pthread_mutex<br>OSSpinLock</p>
+<ul>
+<li>事件传递与响应 <a href="https://www.jianshu.com/p/2e074db792ba" target="_blank" rel="noopener">https://www.jianshu.com/p/2e074db792ba</a></li>
+</ul>
+<p>1.触摸屏幕产生触摸事件后，触摸事件会被添加到由UIApplication管理的事件队列中（即，首先接收到事件的是UIApplication）。<br>2.UIApplication会从事件队列中取出最前面的事件，把事件传递给应用程序的主窗口（keyWindow）。<br>3.主窗口会在视图层次结构中找到一个最合适的视图来处理触摸事件。（hitTest:withEvent: pointInside)<br>4.最合适的view会调用自己的touches方法处理事件<br>5.touches默认做法是把事件顺着响应者链条向上抛</p>
+<ul>
+<li>category load initialize <a href="https://www.jianshu.com/p/6ad3b871aa79" target="_blank" rel="noopener">https://www.jianshu.com/p/6ad3b871aa79</a><br>先加载class的load方法(先加载父类 再加载子类 分类 根据编译顺序加载)<br>再加载category的load</li>
+</ul>
+<p>load-&gt;函数地址调用<br>Runtime加载类、category时调用 只调用一次</p>
+<p>initialize-&gt;objc_msgSend<br>第一次收到消息调用 父类可能多次被调用</p>
+<ul>
+<li>三方库原理 <a href="https://mp.weixin.qq.com/s/0o0SS0Bds2vB6hDjQfEl4w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/0o0SS0Bds2vB6hDjQfEl4w</a><br>AFN<br>AFN2.0使用常驻线程<br>每一个请求对应一个AFHTTPRequestOperation实例对象，每一个operation在初始化完成后都会被添加到一个NSOperationQueue中，由这个NSOperationQueue来控制并发，系统会根据当前可用的核心数以及负载情况动态地调整最大的并发 operation 数量<br>AF中常驻线程的实现<ol start="0">
+<li>使用单例创建线程</li>
+<li>添加到runloop中，且加了一个NSMachPort，来防止这个新建的线程由于没有活动直接退出。【 使用MachPort配合RunLoop进行线程保活】</li>
+</ol>
+</li>
+</ul>
+<p>AF3.x为什么不再需要常驻线程？<br>NSURLConnection的一大痛点就是：发起请求后，这条线程并不能随风而去，而需要一直处于等待回调的状态。<br>NSURLSession发起的请求，不再需要在当前线程进行代理方法的回调！可以指定回调的delegateQueue，这样我们就不用为了等待代理回调方法而苦苦保活线程了。<br>同时还要注意一下，指定的用于接收回调的Queue的maxConcurrentOperationCount设为了1，这里目的是想要让并发的请求串行的进行回调</p>
+<p>为什么AF3.0中需要设置self.operationQueue.maxConcurrentOperationCount = 1;而AF2.0却不需要<br>—&gt;&gt;&gt; AF3.0的operationQueue是用来接收NSURLSessionDelegate回调的，鉴于一些多线程数据访问的安全性考虑，设置了maxConcurrentOperationCount = 1来达到串行回调的效果<br>—&gt;&gt;&gt; AF2.0的operationQueue是用来添加operation并进行并发请求的，所以不需要设置为1。</p>
+<p>SDWebImage<br>使用NSCache进行缓存的<br>设置了其最大可缓存对象的个数为5个，当我们要添加第六个对象时NSCache自动删除了我们添加的第一个对象并触发了NSCacheDelegate的回调方法<br>以下情况NSCache会删除缓存：<br>•   NSCache缓存对象自身被释放<br>•   手动调用removeObjectForKey:方法<br>•   手动调用removeAllObjects<br>•   缓存中对象的个数大于countLimit，或，缓存中对象的总cost值大于totalCostLimit<br>•   程序进入后台后<br>•   收到系统的内存警告</p>
+<p>异步方式在ioQueue上执行删除操作<br>所有IO操作使用一个串行队列来执行，避免加锁释放锁的复杂，还有就是使用NSOperation作为一个标识用来取消耗时的磁盘查询任务。内存缓存就直接删除NSCache对象的数据，磁盘缓存就直接获取文件的绝对路径后删除即可</p>
+<p>删除磁盘中过期的图片，以及当缓存大小大于配置的值时，进行缓存清理</p>
+<p>FMDB<br>FMDB事务批量更新数据库(740条数据用和不用事务效率差别20倍+)<br>只要在执行SQL语句前加上以下的SQL语句，就可以使用事务功能了：<br>开启事务的SQL语句，”begin transaction;”<br>进行提交的SQL语句，”commit transaction;”<br>进行回滚的SQL语句，”rollback transaction;”</p>
+<ul>
+<li><p>MVVM的认识 <a href="https://www.jianshu.com/p/f1d0f7f01130" target="_blank" rel="noopener">https://www.jianshu.com/p/f1d0f7f01130</a><br>MVVM同MVC一样，目的都是分离Model与View，但是它更好的将表示逻辑分离出来，减轻了Controller的负担；<br>ViewController中不要引入Model，引入了就难免会在Controller中对Model做处理；<br>对于很简单的界面使用MVVM会增加代码量，但如果界面中内容很多、Cell样式也很多的情况下使用MVVM可以很好地将VC中处理Cell相关的工作分离出来</p>
+</li>
+<li><p>组件化 <a href="https://www.cnblogs.com/fishbay/p/7216084.html" target="_blank" rel="noopener">https://www.cnblogs.com/fishbay/p/7216084.html</a><br>url-block<br>protocol-class<br>target-action</p>
+<p>  ◦    <a href="https://mp.weixin.qq.com/s/0o0SS0Bds2vB6hDjQfEl4w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/0o0SS0Bds2vB6hDjQfEl4w</a> (面试题)<br>  ◦    <a href="https://xiaozhuanlan.com/topic/4985160237" target="_blank" rel="noopener">https://xiaozhuanlan.com/topic/4985160237</a> (面试题)<br>  ◦    <a href="https://xiaozhuanlan.com/topic/3908156472" target="_blank" rel="noopener">https://xiaozhuanlan.com/topic/3908156472</a> (面试题)<br>  ◦    <a href="https://blog.csdn.net/hanangellove/article/details/45033453" target="_blank" rel="noopener">https://blog.csdn.net/hanangellove/article/details/45033453</a> (面试题)</p>
+</li>
+</ul>
+<p>========================================</p>
+<ul>
+<li>网络</li>
+</ul>
+<p>OSI七层协议<br>1、应用层 协议有：HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP<br>2、表示层 数据的表示、安全、压缩，格式有：JPEG、ASCll、DECOIC、加密格式等(数据格式化，代码转换，数据加密),没有协议<br>3、会话层 建立、管理、终止会话,没有协议<br>4、传输层 定义传输数据的协议端口号，以及流控和差错校验。协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层<br>5、网络层 进行逻辑地址寻址，实现不同网络之间的路径选择。协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP<br>6、数据链路层 建立逻辑连接、进行硬件地址寻址、差错校验 等功能。（由底层网络定义协议）将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。协议有：SLIP CSLIP PPP MTU ARP[链接：<a href="https://baike.baidu.com/item/A" target="_blank" rel="noopener">https://baike.baidu.com/item/A</a> … addin]RARP<br>7、物理层 建立、维护、断开物理连接。以二进制数据形式在物理媒体上传输数据（由底层网络定义协议）协议有：ISO2110 IEEE802 IEEE802.2</p>
+<p>TPC/IP协议是传输层协议，主要解决数据如何在网络中传输 <br>HTTP是应用层协议，主要解决如何包装数据 <br>我们在传输数据时，可以只使用（传输层）TCP/IP协议，但是那样的话，如果没有应用层，便无法识别数据内容，如果想要使传输的数据有意义，则必须使用到应用层协议，应用层协议有很多，比如HTTP、FTP、TELNET等，也可以自己定义应用层协议</p>
+<p>TCP和UDP使用该协议从一个网络传送数据包到另一个网络。把IP想像成一种高速公路，它允许其它协议在上面行驶并找到到其它电脑的出口。TCP和UDP是高速公路上的“卡车”，它们携带的货物就是像HTTP，文件传输协议FTP这样的协议等。</p>
+<p>TCP/IP协议簇四层模型<br>链路层 网络层 传输层 应用层</p>
+<p>什么是Socket<br>    0.    Socket其实并不是一个协议 而是一个通信模型。它是为了方便大家直接使用更底层协议（TCP | UDP）而存在的抽象层<br>    0.    Socket是对 TCP/IP协议的封装，Socket本身并不是协议，而是一个调用的接口（API），主要用来一台电脑的两个进程通信，<br>    0.    Socket在网络通信中，它涵盖了网络层、传输层、会话层、表示层、应用层，因为其信时候用到了IP和端口，仅这两个就表明了它用到了网络层和传输层，而且它无视多台电脑通信的系统差别，所以它涉及了表示层，一般Socket都是基于一个应用程序的，所以会涉及到会话层和应用层</p>
+<p>什么是WebSocket，解决了什么问题？<br>    0.    WebSocket是应用层第七层上的一个应用层协议，它必须依赖 HTTP 协议进行一次握手 ，握手成功后，数据就直接从 TCP 通道传输，与 HTTP 无关了<br>    0.    Websocket的数据传输是frame形式传输的，比如会将一条消息分为几个frame，按照先后顺序传输出去。这样做会有几个好处： •   1) 大数据的传输可以分片传输，不用考虑到数据大小导致的长度标志位不足够的情况。 •   2 )和http的chunk一样，可以边生成数据边传递消息，即提高传输效率。<br>    0.    总之：WebSocket 的实现分为握手，数据发送/读取，关闭连接。</p>
+<p>HTTP 的几种请求方式？以及区别<br>HTTP1.0定义了三种请求方法：GET, POST 和 HEAD方法。 HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。 HTTP协议使用的是URI，是一种表示资源标志，那么对应的HTTP Verb就是各种对资源的操作，GET，PUT，DELETE等，明确这些，再往下看。可参考 HTTP: Hyper Text Transfer Protocol,超文本传输协议URI: Universal Resource Identifier，统一资源标识符URL: Universal Reversource Locator，统一资源定位符 简单地说，URI是在某一规则下能把资源独一无二地标识出来，URL是特殊的URI，即用定位的方式实现URI<br> 
+GET 请求指定的页面信息，并返回实体主体。 HEAD 类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头。 PUT：从客户端向服务器传送的数据取代指定的文档的内容, 用PUT来达到更改资源，需要client提交资源全部信息，如果只有部分信息，不应该使用PUT DELETE：请求服务器删除指定的页面。 OPTIONS：允许客户端查看服务器的性能。</p>
+<p>HTTPS (Hyper Text Transfer Protocol over Secure Socket Layer)<br>HTTPS通信过程：<br>    0.    客户端请求https链接，服务端返回公钥<br>    0.    客户端产生随机对称密钥<br>    0.    客户端用公钥对对称密钥加密<br>    0.    客户端发送加密后的对称密钥<br>    0.    客户端发送通过对称密钥加密的密文通信</p>
+<p>HTTPS与HTTP的区别：<br>    •    超文本传输协议HTTP协议被用于在Web浏览器和网站服务器之间传递信息。<br>    •    HTTP协议以明文方式发送内容，不提供任何方式的数据加密<br>    •    HTTPS：安全套接字层超文本传输协议HTTPS， 在HTTP的基础上加入SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密<br>    •    https协议需要到ca申请证书，一般免费证书很少，需要交费。<br>    •    http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。<br>    •    http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>    •    http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。 <br>两个小问题<br>1）如何保证公钥不被篡改？<br>解决方法：将公钥放在数字证书中。只要证书是可信的，公钥就是可信的。<br>2）公钥加密计算量太大，如何减少耗用的时间？<br>解决方法：每一次对话（session），客户端和服务器端都生成一个”对话密钥”（session key），用它来加密信息。由于”对话密钥”是对称加密，所以运算速度非常快，而服务器公钥(非对称加密)只用于加密”对话密钥”本身，这样就减少了加密运算的消耗时间。</p>
+<p>SSL协议<br>SSL: SSL协议的基本思路是采用公钥加密法， 采就是客户端先向服务器端索要公钥，然后用公钥加密信息，服务器收到密文后，用自己的私钥解密。<br>SSL协议的基本过程如下：<br>    0.    客户端向服务器端索要并验证公钥<br>    0.    双方协商生成”对话密钥”<br>    0.    双方采用“ 对话密钥”进行加密通信c </p>
+<ul>
+<li><p>设计模式<br>装饰模式(分类)<br>代理模式(协议)<br>工厂模式(UIButton)<br>原型模式(copy)<br>观察者模式(kvo)<br>迭代器模式(数组遍历)<br>单例模式(UIApplication)<br>享元模式(cell重用)</p>
+</li>
+<li><p>数据结构 算法 <a href="https://mp.weixin.qq.com/s/F0DSOR8LcpA1fDWVmFUKQA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/F0DSOR8LcpA1fDWVmFUKQA</a><br>反转字符串</p>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>Solution &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public:</span><br><span class="line">    string reverseString(string s) &#123;</span><br><span class="line">        int left = 0, right = s.size() - 1;</span><br><span class="line">        while (left &lt; right) &#123;</span><br><span class="line">            char t = s[left];</span><br><span class="line">            s[left++] = s[right];</span><br><span class="line">            s[right--] = t;</span><br><span class="line">        &#125;</span><br><span class="line">        return s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>1.冒泡排序<br>左右相邻比较 交换 两次遍历<br>O(n*n)</p>
+<p>2.插入排序<br>分成有序 无序两组 无序往有序插入<br>O(n*n)</p>
+<p>3.选择排序</p>
+<p>4.希尔排序<br>分组后再插入排序</p>
+<p>5.归并排序<br>先拆再合 变合变排序</p>
+<p>6.快排<br>    0.    选取基准<br>    0.    左右两边查找 右边大 左边小 交换<br>    0.    递归<br>时间复杂度： 最大 最小为基准-&gt;O(n*n) 中间值为基准-&gt;O(nlogn)</p>
+<p>7.堆排序</p>
+<p>8.计数排序</p>
+<p>9.桶排序</p>
+<p>10.基数排序</p>
+<p>单链表反转</p>
+<figure class="highlight plain"><figcaption><span>reverseBetween(ListNode* head) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    LstNode *prev = NULL;</span><br><span class="line">    ListNode *curr = head;</span><br><span class="line">    while (curr) &#123;</span><br><span class="line">    // 保存下一个节点，防止断链</span><br><span class="line">    ListNode *nextTemp = curr-&gt;next;</span><br><span class="line">    // 让当前节点的下一个指向前一个</span><br><span class="line">    curr-&gt;next = prev;</span><br><span class="line">    // 移动前一个位置</span><br><span class="line">    prev = curr;</span><br><span class="line">    // 遍历下一个子串</span><br><span class="line">    curr = nextTemp;</span><br><span class="line">  &#125;</span><br><span class="line">  return prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>删除单链表中所有与给定值相等的节点<br>1.递归实现    </p>
+<figure class="highlight plain"><figcaption><span>removeElements(ListNode* head, int val) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    if (head == NULL)  return head;</span><br><span class="line">    head-&gt;next = removeElements(head-&gt;next, val);</span><br><span class="line">    return head-&gt;val == val ? head-&gt;next : head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.while循环实现</p>
+<figure class="highlight plain"><figcaption><span>removeElements(ListNode* head, int val) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    // 结果节点的当前节点</span><br><span class="line">    ListNode *cur = NULL;</span><br><span class="line">    // 结果节点的头节点</span><br><span class="line">    ListNode *rHead = NULL;</span><br><span class="line">    while (head) &#123;</span><br><span class="line">        // 防止断链</span><br><span class="line">        ListNode *temp = head-&gt;next;</span><br><span class="line">        // 使得当前节点的next为空</span><br><span class="line">        head-&gt;next = NULL;</span><br><span class="line">        // 如果值不等，就插入到结果链表中</span><br><span class="line">        if (head-&gt;val != val) &#123;</span><br><span class="line">            if (!rHead) &#123;</span><br><span class="line">                rHead = head;</span><br><span class="line">                cur = head;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                cur-&gt;next = head;</span><br><span class="line">                cur = cur-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        head = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    return rHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对链表和数组的认识，应用场景</p>
+<p>链表成环判断    </p>
+<figure class="highlight plain"><figcaption><span>hasCycle(ListNode *head) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    if (head == NULL || head-&gt;next == NULL) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    // 慢指针每次移动一个节点</span><br><span class="line">    ListNode *slow = head;</span><br><span class="line">    // 快指针每次移动2个节点</span><br><span class="line">    ListNode *fast = head;</span><br><span class="line">    while (fast != NULL &amp;&amp; fast-&gt;next != NULL) &#123;</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">        fast = fast-&gt;next-&gt;next;</span><br><span class="line">        // 如果快慢指针相遇，则有环</span><br><span class="line">        if (slow == fast) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二叉搜索树<br>深度优先和广度优先</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>MJ2009</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://incrediblemj.github.io/2019/06/28/面试准备/" title="2019.6月 面试准备">https://incrediblemj.github.io/2019/06/28/面试准备/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/19/Swift4-2-新特性/" rel="next" title="Swift4.2_新特性">
+                <i class="fa fa-chevron-left"></i> Swift4.2_新特性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/06/Git SSH Public Key 错误经验总结/" rel="prev" title="Git SSH Public Key 错误经验总结">
+                Git SSH Public Key 错误经验总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">MJ2009</p>
+              <p class="site-description motion-element" itemprop="description">iOS, IT, Code, Essay</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/incredibleMJ" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:chengyingzhan@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MJ2009</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'mvMGtXLx2TNI3uKynXIXRf8L-gzGzoHsz',
+        appKey: '9fYTrkKd8BEWcKJmMj4kIEgF',
+        placeholder: 'Leave a comment',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.1.0"></script>
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
