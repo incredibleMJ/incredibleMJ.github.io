@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'SJWAYAOR88',
+      apiKey: '832d853865b76e86e906b01f568341a7',
+      indexName: 'MJ2009_Hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="https://www.whatsnewinswift.com/  Swift2.0defer12345func doStuff() &amp;#123;    print(&amp;quot;Checkpoint 2&amp;quot;)    defer &amp;#123; print(&amp;quot;Do clean up here&amp;quot;) &amp;#125;    print(&amp;quot;Checkpoint 3&amp;quo">
+<meta name="keywords" content="iOS,Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What&#39;s new in swift">
+<meta property="og:url" content="https://incrediblemj.github.io/2019/07/22/What's new in swift/index.html">
+<meta property="og:site_name" content="MJ2009">
+<meta property="og:description" content="https://www.whatsnewinswift.com/  Swift2.0defer12345func doStuff() &amp;#123;    print(&amp;quot;Checkpoint 2&amp;quot;)    defer &amp;#123; print(&amp;quot;Do clean up here&amp;quot;) &amp;#125;    print(&amp;quot;Checkpoint 3&amp;quo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-24T11:57:31.227Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What&#39;s new in swift">
+<meta name="twitter:description" content="https://www.whatsnewinswift.com/  Swift2.0defer12345func doStuff() &amp;#123;    print(&amp;quot;Checkpoint 2&amp;quot;)    defer &amp;#123; print(&amp;quot;Do clean up here&amp;quot;) &amp;#125;    print(&amp;quot;Checkpoint 3&amp;quo">
+
+
+
+
+
+
+  <link rel="canonical" href="https://incrediblemj.github.io/2019/07/22/What's new in swift/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>What's new in swift | MJ2009</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MJ2009</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+</li>
+
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://incrediblemj.github.io/2019/07/22/What's new in swift/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MJ2009">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MJ2009">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">What's new in swift</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T14:32:57+08:00">2019-07-22</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/22/What's new in swift/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/22/What's new in swift/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="https://www.whatsnewinswift.com/" target="_blank" rel="noopener">https://www.whatsnewinswift.com/</a></p>
+</blockquote>
+<h1 id="Swift2-0"><a href="#Swift2-0" class="headerlink" title="Swift2.0"></a>Swift2.0</h1><h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func doStuff() &#123;</span><br><span class="line">    print(&quot;Checkpoint 2&quot;)</span><br><span class="line">    defer &#123; print(&quot;Do clean up here&quot;) &#125;</span><br><span class="line">    print(&quot;Checkpoint 3&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>defer 里面的代码会在作用域代码执行完后执行</p>
+<a id="more"></a>
+
+<h2 id="available"><a href="#available" class="headerlink" title="#available"></a>#available</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if #available(iOS 9, *) &#123;</span><br><span class="line">    let stackView = UIStackView()</span><br><span class="line">    // do stuff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift2-2"><a href="#Swift2-2" class="headerlink" title="Swift2.2"></a>Swift2.2</h1><h2 id="file-line-column-function"><a href="#file-line-column-function" class="headerlink" title="#file #line #column #function"></a>#file #line #column #function</h2><p>调试打印文件名 行号 列号 函数名</p>
+<h2 id="Swift-version-checking"><a href="#Swift-version-checking" class="headerlink" title="Swift version checking"></a>Swift version checking</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#if swift(&gt;=2.2)</span><br><span class="line">print(&quot;Running Swift 2.2 or later&quot;)</span><br><span class="line">#else</span><br><span class="line">print(&quot;Running Swift 2.1 or earlier&quot;)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift3-0"><a href="#Swift3-0" class="headerlink" title="Swift3.0"></a>Swift3.0</h1><h2 id="默认所有的方法名参数前都需要-label"><a href="#默认所有的方法名参数前都需要-label" class="headerlink" title="默认所有的方法名参数前都需要 label"></a>默认所有的方法名参数前都需要 label</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names.indexOf(&quot;Taylor&quot;)</span><br><span class="line">names.index(of: &quot;Taylor&quot;)</span><br><span class="line"></span><br><span class="line">&quot;Taylor&quot;.writeToFile(&quot;filename&quot;, atomically: true, encoding: NSUTF8StringEncoding)</span><br><span class="line">&quot;Taylor&quot;.write(toFile: &quot;somefile&quot;, atomically: true, encoding: String.Encoding.utf8)</span><br></pre></td></tr></table></figure>
+
+<p><code>Timer,UserDefaults, FileManager, Data, Date, URL URLRequest, UUID, NotificationCenter</code> 等去掉NS前缀</p>
+<h2 id="去掉一些不必要的单词"><a href="#去掉一些不必要的单词" class="headerlink" title="去掉一些不必要的单词"></a>去掉一些不必要的单词</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&quot;  Hello  &quot;.stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())</span><br><span class="line">&quot;  Hello  &quot;.trimmingCharacters(in: .whitespacesAndNewlines)</span><br><span class="line"></span><br><span class="line">&quot;Taylor&quot;.containsString(&quot;ayl&quot;)</span><br><span class="line">&quot;Taylor&quot;.contains(&quot;ayl&quot;)</span><br><span class="line"></span><br><span class="line">&quot;1,2,3,4,5&quot;.componentsSeparatedByString(&quot;,&quot;)</span><br><span class="line">&quot;1,2,3,4,5&quot;.components(separatedBy: &quot;,&quot;)</span><br><span class="line"></span><br><span class="line">myPath.stringByAppendingPathComponent(&quot;file.txt&quot;)</span><br><span class="line">myPath.appendingPathComponent(&quot;file.txt&quot;)</span><br><span class="line"></span><br><span class="line">&quot;Hello, world&quot;.stringByReplacingOccurrencesOfString(&quot;Hello&quot;, withString: &quot;Goodbye&quot;)</span><br><span class="line">&quot;Hello, world&quot;.replacingOccurrences(of: &quot;Hello&quot;, with: &quot;Goodbye&quot;)</span><br><span class="line"></span><br><span class="line">&quot;Hello, world&quot;.substringFromIndex(7)</span><br><span class="line">&quot;Hello, world&quot;.substring(from: 7)</span><br><span class="line"></span><br><span class="line">&quot;Hello, world&quot;.capitalizedString</span><br><span class="line">&quot;Hello, world&quot;.capitalized</span><br></pre></td></tr></table></figure>
+
+<h2 id="所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名"><a href="#所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名" class="headerlink" title="所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名"></a>所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let red = UIColor.red.cgColor</span><br><span class="line"></span><br><span class="line">UIInterfaceOrientationMask.Portrait // old</span><br><span class="line">UIInterfaceOrientationMask.portrait // new</span><br><span class="line"></span><br><span class="line">NSTextAlignment.Left // old</span><br><span class="line">NSTextAlignment.left // new</span><br><span class="line"></span><br><span class="line">SKBlendMode.Replace // old</span><br><span class="line">SKBlendMode.replace // new</span><br></pre></td></tr></table></figure>
+
+<h2 id="更-Swifty-的-C-函数调用"><a href="#更-Swifty-的-C-函数调用" class="headerlink" title="更 Swifty 的 C 函数调用"></a>更 Swifty 的 C 函数调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let ctx = UIGraphicsGetCurrentContext()</span><br><span class="line"></span><br><span class="line">let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)</span><br><span class="line">CGContextSetFillColorWithColor(ctx, UIColor.redColor().CGColor)</span><br><span class="line">CGContextSetStrokeColorWithColor(ctx, UIColor.blackColor().CGColor)</span><br><span class="line">CGContextSetLineWidth(ctx, 10)</span><br><span class="line">CGContextAddRect(ctx, rectangle)</span><br><span class="line">CGContextDrawPath(ctx, .FillStroke)</span><br><span class="line"></span><br><span class="line">UIGraphicsEndImageContext()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if let ctx = UIGraphicsGetCurrentContext() &#123;</span><br><span class="line">    let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)</span><br><span class="line">    ctx.setFillColor(UIColor.red.cgColor)</span><br><span class="line">    ctx.setStrokeColor(UIColor.black.cgColor)</span><br><span class="line">    ctx.setLineWidth(10)</span><br><span class="line">    ctx.addRect(rectangle)</span><br><span class="line">    ctx.drawPath(using: .fillStroke)</span><br><span class="line"></span><br><span class="line">    UIGraphicsEndImageContext()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift3-1"><a href="#Swift3-1" class="headerlink" title="Swift3.1"></a>Swift3.1</h1><h2 id="prefix-while-and-drop-while"><a href="#prefix-while-and-drop-while" class="headerlink" title="prefix(while:) and drop(while:)"></a>prefix(while:) and drop(while:)</h2><h1 id="Swift4-0"><a href="#Swift4-0" class="headerlink" title="Swift4.0"></a>Swift4.0</h1><h2 id="Codable"><a href="#Codable" class="headerlink" title="Codable"></a>Codable</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">struct Language: Codable &#123;</span><br><span class="line">    var name: String</span><br><span class="line">    var version: Int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let swift = Language(name: &quot;Swift&quot;, version: 4)</span><br><span class="line"></span><br><span class="line">let encoder = JSONEncoder()</span><br><span class="line">if let encoded = try? encoder.encode(swift) &#123;</span><br><span class="line">    if let json = String(data: encoded, encoding: .utf8) &#123;</span><br><span class="line">        print(json)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    let decoder = JSONDecoder()</span><br><span class="line">    if let decoded = try? decoder.decode(Language.self, from: encoded) &#123;</span><br><span class="line">        print(decoded.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="keyPath"><a href="#keyPath" class="headerlink" title="keyPath"></a>keyPath</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let nameKeyPath = \Starship.name</span><br><span class="line">let maxWarpKeyPath = \Starship.maxWarp</span><br><span class="line">let captainName = \Starship.captain.name</span><br><span class="line"></span><br><span class="line">let starshipName = voyager[keyPath: nameKeyPath]</span><br><span class="line">let starshipMaxWarp = voyager[keyPath: maxWarpKeyPath]</span><br><span class="line">let starshipCaptain = voyager[keyPath: captainName]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dictionary-grouping-…"><a href="#Dictionary-grouping-…" class="headerlink" title="Dictionary(grouping: …"></a>Dictionary(grouping: …</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let cities = [&quot;Shanghai&quot;: 24_256_800, &quot;Karachi&quot;: 23_500_000, &quot;Beijing&quot;: 21_516_000, &quot;Seoul&quot;: 9_995_000];</span><br><span class="line"></span><br><span class="line">let groupedCities = Dictionary(grouping: cities.keys) &#123; $0.characters.first! &#125;</span><br><span class="line"></span><br><span class="line">//输出：[&quot;B&quot;: [&quot;Beijing&quot;], &quot;S&quot;: [&quot;Shanghai&quot;, &quot;Seoul&quot;], &quot;K&quot;: [&quot;Karachi&quot;]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="dictionary-default-value"><a href="#dictionary-default-value" class="headerlink" title="dictionary default value"></a>dictionary default value</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var favoriteTVShows = [&quot;Red Dwarf&quot;, &quot;Blackadder&quot;, &quot;Fawlty Towers&quot;, &quot;Red Dwarf&quot;]</span><br><span class="line">var favoriteCounts = [String: Int]()</span><br><span class="line"></span><br><span class="line">for show in favoriteTVShows &#123;</span><br><span class="line">    favoriteCounts[show, default: 0] += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="One-sided-ranges"><a href="#One-sided-ranges" class="headerlink" title="One-sided ranges"></a>One-sided ranges</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let characters = [&quot;Dr Horrible&quot;, &quot;Captain Hammer&quot;, &quot;Penny&quot;, &quot;Bad Horse&quot;, &quot;Moist&quot;]</span><br><span class="line">let bigParts = characters[..&lt;3]</span><br><span class="line">let smallParts = characters[3...]</span><br><span class="line">print(bigParts)</span><br><span class="line">print(smallParts)</span><br></pre></td></tr></table></figure>
+
+<p><code>That code will print out [&quot;Dr Horrible&quot;, &quot;Captain Hammer&quot;, &quot;Penny&quot;] then [&quot;Bad Horse&quot;, &quot;Moist&quot;]</code></p>
+<h1 id="Swift4-1"><a href="#Swift4-1" class="headerlink" title="Swift4.1"></a>Swift4.1</h1><h2 id="默认支持合成-Equatable-和-Hashable-实现"><a href="#默认支持合成-Equatable-和-Hashable-实现" class="headerlink" title="默认支持合成 Equatable 和 Hashable 实现"></a>默认支持合成 Equatable 和 Hashable 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct Person: Equatable, Hashable &#123;</span><br><span class="line">	var firstName: String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="targetEnvironment"><a href="#targetEnvironment" class="headerlink" title="targetEnvironment"></a>targetEnvironment</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#if targetEnvironment(simulator)</span><br><span class="line">   // code for the simulator here</span><br><span class="line">#else</span><br><span class="line">   // code for real devices here</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift4-2"><a href="#Swift4-2" class="headerlink" title="Swift4.2"></a>Swift4.2</h1><h2 id="allCases"><a href="#allCases" class="headerlink" title="allCases"></a>allCases</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">enum Pasta: CaseIterable &#123;</span><br><span class="line">    case cannelloni, fusilli, linguine, tagliatelle</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for shape in Pasta.allCases &#123;</span><br><span class="line">    print(&quot;I like eating \(shape).&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="warning-error"><a href="#warning-error" class="headerlink" title="#warning #error"></a>#warning #error</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func encrypt(_ string: String, with password: String) -&gt; String &#123;</span><br><span class="line">    #warning(&quot;This is terrible method of encryption&quot;)</span><br><span class="line">    return password + String(string.reversed()) + password</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct Configuration &#123;</span><br><span class="line">    var apiKey: String &#123;</span><br><span class="line">        #error(&quot;Please enter your API key below then delete this line.&quot;)</span><br><span class="line">        return &quot;Enter your key here&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="dynamicMemberLookup"><a href="#dynamicMemberLookup" class="headerlink" title="@dynamicMemberLookup"></a>@dynamicMemberLookup</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@dynamicMemberLookup</span><br><span class="line">struct Employee &#123;</span><br><span class="line">    subscript(dynamicMember member: String) -&gt; String &#123;</span><br><span class="line">        let properties = [&quot;name&quot;: &quot;Taylor Swift&quot;, &quot;city&quot;: &quot;Nashville&quot;]</span><br><span class="line">        return properties[member, default: &quot;&quot;]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    subscript(dynamicMember member: String) -&gt; Int &#123;</span><br><span class="line">        let properties = [&quot;age&quot;: 26, &quot;height&quot;: 178]</span><br><span class="line">        return properties[member, default: 0]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let employee = Employee()</span><br><span class="line">let age: Int = employee.age</span><br></pre></td></tr></table></figure>
+
+<p>可继承 重写 subscript</p>
+<h2 id="加强的条件约束"><a href="#加强的条件约束" class="headerlink" title="加强的条件约束"></a>加强的条件约束</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//检测是否符合某协议</span><br><span class="line">let items: Any = [Book(), Book(), Book()]</span><br><span class="line"></span><br><span class="line">if let books = items as? Purchaseable &#123;</span><br><span class="line">    books.buy()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//更多标准库类型遵守 Hashable (including optionals, arrays, dictionaries, and ranges)</span><br><span class="line"></span><br><span class="line">struct User: Hashable &#123;</span><br><span class="line">    var name: String</span><br><span class="line">    var pets: [String]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let randomFloat = Float.random(in: 1..&lt;10)</span><br><span class="line">let randomDouble = Double.random(in: 1...100)</span><br><span class="line">let randomCGFloat = CGFloat.random(in: 1...1000)</span><br><span class="line"></span><br><span class="line">var albums = [&quot;Red&quot;, &quot;1989&quot;, &quot;Reputation&quot;]</span><br><span class="line"></span><br><span class="line">// shuffle in place</span><br><span class="line">albums.shuffle()</span><br><span class="line"></span><br><span class="line">// get a shuffled array back</span><br><span class="line">let shuffled = albums.shuffled()</span><br><span class="line"></span><br><span class="line">if let random = albums.randomElement() &#123;</span><br><span class="line">    print(&quot;The random album is \(random).&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hasher"><a href="#Hasher" class="headerlink" title="Hasher"></a>Hasher</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">struct iPad: Hashable &#123;</span><br><span class="line">    var serialNumber: String</span><br><span class="line">    var capacity: Int</span><br><span class="line"></span><br><span class="line">    func hash(into hasher: inout Hasher) &#123;</span><br><span class="line">        hasher.combine(serialNumber)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let first = iPad(serialNumber: &quot;12345&quot;, capacity: 256)</span><br><span class="line">let second = iPad(serialNumber: &quot;54321&quot;, capacity: 512)</span><br><span class="line"></span><br><span class="line">var hasher = Hasher()</span><br><span class="line">hasher.combine(first)</span><br><span class="line">hasher.combine(second)</span><br><span class="line">let hash = hasher.finalize()</span><br></pre></td></tr></table></figure>
+
+<h2 id="allSatisfy"><a href="#allSatisfy" class="headerlink" title="allSatisfy"></a>allSatisfy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let scores = [85, 88, 95, 92]</span><br><span class="line"></span><br><span class="line">let passed = scores.allSatisfy &#123; $0 &gt;= 85 &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="removeAll-where"><a href="#removeAll-where" class="headerlink" title="removeAll(where:)"></a>removeAll(where:)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var pythons = [&quot;John&quot;, &quot;Michael&quot;, &quot;Graham&quot;, &quot;Terry&quot;, &quot;Eric&quot;, &quot;Terry&quot;]</span><br><span class="line">pythons.removeAll &#123; $0.hasPrefix(&quot;Terry&quot;) &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var loggedIn = false</span><br><span class="line">loggedIn.toggle()</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift5-0"><a href="#Swift5-0" class="headerlink" title="Swift5.0"></a>Swift5.0</h1><h2 id="Raw-strings"><a href="#Raw-strings" class="headerlink" title="Raw strings"></a>Raw strings</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let answer = 42</span><br><span class="line">let dontpanic = #&quot;The answer to life, the universe, and everything is \#(answer).&quot;#</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">My dog said &quot;woof&quot;#gooddog</span><br><span class="line">let str = ##&quot;My dog said &quot;woof&quot;#gooddog&quot;##</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let multiline = #&quot;&quot;&quot;</span><br><span class="line">The answer to life,</span><br><span class="line">the universe,</span><br><span class="line">and everything is \#(answer).</span><br><span class="line">&quot;&quot;&quot;#</span><br></pre></td></tr></table></figure>
+
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">func fetchUnreadCount1(from urlString: String, completionHandler: @escaping (Result&lt;Int, NetworkError&gt;) -&gt; Void)  &#123;</span><br><span class="line">    guard let url = URL(string: urlString) else &#123;</span><br><span class="line">        completionHandler(.failure(.badURL))</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // complicated networking code here</span><br><span class="line">    print(&quot;Fetching \(url.absoluteString)...&quot;)</span><br><span class="line">    completionHandler(.success(5))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetchUnreadCount1(from: &quot;https://www.hackingwithswift.com&quot;) &#123; result in</span><br><span class="line">    switch result &#123;</span><br><span class="line">    case .success(let count):</span><br><span class="line">        print(&quot;\(count) unread messages.&quot;)</span><br><span class="line">    case .failure(let error):</span><br><span class="line">        print(error.localizedDescription)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>get()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fetchUnreadCount1(from: &quot;https://www.hackingwithswift.com&quot;) &#123; result in</span><br><span class="line">    if let count = try? result.get() &#123;</span><br><span class="line">        print(&quot;\(count) unread messages.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>init</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let result = Result &#123; try String(contentsOfFile: someFile) &#125;</span><br></pre></td></tr></table></figure>
+
+<p>偏向于用 Swift.Error 作为通用错误类型枚举</p>
+<h2 id="string-interpolation"><a href="#string-interpolation" class="headerlink" title="string interpolation"></a>string interpolation</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extension String.StringInterpolation &#123;</span><br><span class="line">    mutating func appendInterpolation(_ value: User) &#123;</span><br><span class="line">        appendInterpolation(&quot;My name is \(value.name) and I&apos;m \(value.age)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let user = User(name: &quot;Guybrush Threepwood&quot;, age: 33)</span><br><span class="line">print(&quot;User details: \(user)&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">extension String.StringInterpolation &#123;</span><br><span class="line">    mutating func appendInterpolation(_ number: Int, style: NumberFormatter.Style) &#123;</span><br><span class="line">        let formatter = NumberFormatter()</span><br><span class="line">        formatter.numberStyle = style</span><br><span class="line"></span><br><span class="line">        if let result = formatter.string(from: number as NSNumber) &#123;</span><br><span class="line">            appendLiteral(result)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let number = Int.random(in: 0...100)</span><br><span class="line">let lucky = &quot;The lucky number this week is \(number, style: .spellOut).&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension String.StringInterpolation &#123;</span><br><span class="line">    mutating func appendInterpolation(repeat str: String, _ count: Int) &#123;</span><br><span class="line">        for _ in 0 ..&lt; count &#123;</span><br><span class="line">            appendLiteral(str)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(&quot;Baby shark \(repeat: &quot;doo &quot;, 6)&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">struct HTMLComponent: ExpressibleByStringLiteral, ExpressibleByStringInterpolation, CustomStringConvertible &#123;</span><br><span class="line">    struct StringInterpolation: StringInterpolationProtocol &#123;</span><br><span class="line">        // start with an empty string</span><br><span class="line">        var output = &quot;&quot;</span><br><span class="line"></span><br><span class="line">        // allocate enough space to hold twice the amount of literal text</span><br><span class="line">        init(literalCapacity: Int, interpolationCount: Int) &#123;</span><br><span class="line">            output.reserveCapacity(literalCapacity * 2)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // a hard-coded piece of text – just add it</span><br><span class="line">        mutating func appendLiteral(_ literal: String) &#123;</span><br><span class="line">            print(&quot;Appending \(literal)&quot;)</span><br><span class="line">            output.append(literal)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // a Twitter username – add it as a link</span><br><span class="line">        mutating func appendInterpolation(twitter: String) &#123;</span><br><span class="line">            print(&quot;Appending \(twitter)&quot;)</span><br><span class="line">            output.append(&quot;&lt;a href=\&quot;https://twitter/\(twitter)\&quot;&gt;@\(twitter)&lt;/a&gt;&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // an email address – add it using mailto</span><br><span class="line">        mutating func appendInterpolation(email: String) &#123;</span><br><span class="line">            print(&quot;Appending \(email)&quot;)</span><br><span class="line">            output.append(&quot;&lt;a href=\&quot;mailto:\(email)\&quot;&gt;\(email)&lt;/a&gt;&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // the finished text for this whole component</span><br><span class="line">    let description: String</span><br><span class="line"></span><br><span class="line">    // create an instance from a literal string</span><br><span class="line">    init(stringLiteral value: String) &#123;</span><br><span class="line">        description = value</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // create an instance from an interpolated string</span><br><span class="line">    init(stringInterpolation: StringInterpolation) &#123;</span><br><span class="line">        description = stringInterpolation.output</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="dynamicCallable"><a href="#dynamicCallable" class="headerlink" title="@dynamicCallable"></a>@dynamicCallable</h2><h2 id="unknown"><a href="#unknown" class="headerlink" title="@unknown"></a>@unknown</h2><h2 id="try"><a href="#try" class="headerlink" title="try?"></a>try?</h2><p>连续可选调用最后只返回一层可选值</p>
+<h2 id="isMultiple-of"><a href="#isMultiple-of" class="headerlink" title="isMultiple(of:)"></a>isMultiple(of:)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let rowNumber = 4</span><br><span class="line"></span><br><span class="line">if rowNumber.isMultiple(of: 2) &#123;</span><br><span class="line">    print(&quot;Even&quot;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    print(&quot;Odd&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="compactMapValues"><a href="#compactMapValues" class="headerlink" title="compactMapValues"></a>compactMapValues</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let people = [</span><br><span class="line">    &quot;Paul&quot;: 38,</span><br><span class="line">    &quot;Sophie&quot;: 8,</span><br><span class="line">    &quot;Charlotte&quot;: 5,</span><br><span class="line">    &quot;William&quot;: nil</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">let knownAges = people.compactMapValues &#123; $0 &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Swift5-1"><a href="#Swift5-1" class="headerlink" title="Swift5.1"></a>Swift5.1</h1><h2 id="更先进的结构体默认初始化"><a href="#更先进的结构体默认初始化" class="headerlink" title="更先进的结构体默认初始化"></a>更先进的结构体默认初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct User &#123;</span><br><span class="line">    var name: String</span><br><span class="line">    var loginCount: Int = 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let gloria = User(name: &quot;Gloria Mendoza&quot;, loginCount: 0)</span><br><span class="line">let suzanne = User(name: &quot;Suzanne Warren&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="隐式-return"><a href="#隐式-return" class="headerlink" title="隐式 return"></a>隐式 return</h2><p>单行表达式可以不用写return</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func double(_ number: Int) -&gt; Int &#123;</span><br><span class="line">    number * 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Self"><a href="#Self" class="headerlink" title="Self"></a>Self</h2><p>dynamic type</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class ImprovedNetworkManager &#123;</span><br><span class="line">    class var maximumActiveRequests: Int &#123;</span><br><span class="line">        return 4</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func printDebugData() &#123;</span><br><span class="line">        print(&quot;Maximum network requests: \(Self.maximumActiveRequests).&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="some"><a href="#some" class="headerlink" title="some"></a>some</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">func makeInt() -&gt; some Equatable &#123;</span><br><span class="line">    Int.random(in: 1...10)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func makeString() -&gt; some Equatable &#123;</span><br><span class="line">    &quot;Red&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Static-and-class-subscripts"><a href="#Static-and-class-subscripts" class="headerlink" title="Static and class subscripts"></a>Static and class subscripts</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public enum NewSettings &#123;</span><br><span class="line">    private static var values = [String: String]()</span><br><span class="line"></span><br><span class="line">    public static subscript(_ name: String) -&gt; String? &#123;</span><br><span class="line">        get &#123;</span><br><span class="line">            return values[name]</span><br><span class="line">        &#125;</span><br><span class="line">        set &#123;</span><br><span class="line">            print(&quot;Adjusting \(name) to \(newValue ?? &quot;nil&quot;)&quot;)</span><br><span class="line">            values[name] = newValue</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">NewSettings[&quot;Captain&quot;] = &quot;Gary&quot;</span><br><span class="line">NewSettings[&quot;Friend&quot;] = &quot;Mooncake&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="支持可选枚举和非可选枚举匹配"><a href="#支持可选枚举和非可选枚举匹配" class="headerlink" title="支持可选枚举和非可选枚举匹配"></a>支持可选枚举和非可选枚举匹配</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">enum BuildStatus &#123;</span><br><span class="line">    case starting</span><br><span class="line">    case inProgress</span><br><span class="line">    case complete</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let status: BuildStatus? = .inProgress</span><br><span class="line"></span><br><span class="line">switch status &#123;</span><br><span class="line">case .inProgress:</span><br><span class="line">    print(&quot;Build is starting…&quot;)</span><br><span class="line">case .complete:</span><br><span class="line">    print(&quot;Build is complete!&quot;)</span><br><span class="line">default:</span><br><span class="line">    print(&quot;Some other build status&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="difference-from"><a href="#difference-from" class="headerlink" title="difference(from:)"></a>difference(from:)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var scores1 = [100, 91, 95, 98, 100]</span><br><span class="line">let scores2 = [100, 98, 95, 91, 100]</span><br><span class="line"></span><br><span class="line">if #available(iOS 9999, *) &#123;</span><br><span class="line">    let diff = scores2.difference(from: scores1)</span><br><span class="line"></span><br><span class="line">    for change in diff &#123;</span><br><span class="line">        switch change &#123;</span><br><span class="line">        case .remove(let offset, _, _):</span><br><span class="line">            scores1.remove(at: offset)</span><br><span class="line">        case .insert(let offset, let element, _):</span><br><span class="line">            scores1.insert(element, at: offset)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    print(scores1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if #available(iOS 9999, *) &#123;</span><br><span class="line">    let diff = scores2.difference(from: scores1)</span><br><span class="line">    let result = scores1.applying(diff) ?? []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-uninitialized-arrays"><a href="#Creating-uninitialized-arrays" class="headerlink" title="Creating uninitialized arrays"></a>Creating uninitialized arrays</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let randomNumbers = Array&lt;Int&gt;(unsafeUninitializedCapacity: 10) &#123; buffer, initializedCount in</span><br><span class="line">    for x in 0..&lt;10 &#123;</span><br><span class="line">        buffer[x] = Int.random(in: 0...10)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    initializedCount = 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>MJ2009</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://incrediblemj.github.io/2019/07/22/What's new in swift/" title="What's new in swift">https://incrediblemj.github.io/2019/07/22/What's new in swift/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/08/合并Framework/" rel="next" title="合并Framework">
+                <i class="fa fa-chevron-left"></i> 合并Framework
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">MJ2009</p>
+              <p class="site-description motion-element" itemprop="description">iOS, IT, Code, Essay</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/incredibleMJ" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:chengyingzhan@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift2-0"><span class="nav-number">1.</span> <span class="nav-text">Swift2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#defer"><span class="nav-number">1.1.</span> <span class="nav-text">defer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#available"><span class="nav-number">1.2.</span> <span class="nav-text">#available</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift2-2"><span class="nav-number">2.</span> <span class="nav-text">Swift2.2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#file-line-column-function"><span class="nav-number">2.1.</span> <span class="nav-text">#file #line #column #function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift-version-checking"><span class="nav-number">2.2.</span> <span class="nav-text">Swift version checking</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift3-0"><span class="nav-number">3.</span> <span class="nav-text">Swift3.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认所有的方法名参数前都需要-label"><span class="nav-number">3.1.</span> <span class="nav-text">默认所有的方法名参数前都需要 label</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去掉一些不必要的单词"><span class="nav-number">3.2.</span> <span class="nav-text">去掉一些不必要的单词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名"><span class="nav-number">3.3.</span> <span class="nav-text">所有枚举和属性首字母大写驼峰命名改成首字母小写驼峰命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更-Swifty-的-C-函数调用"><span class="nav-number">3.4.</span> <span class="nav-text">更 Swifty 的 C 函数调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift3-1"><span class="nav-number">4.</span> <span class="nav-text">Swift3.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#prefix-while-and-drop-while"><span class="nav-number">4.1.</span> <span class="nav-text">prefix(while:) and drop(while:)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift4-0"><span class="nav-number">5.</span> <span class="nav-text">Swift4.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codable"><span class="nav-number">5.1.</span> <span class="nav-text">Codable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keyPath"><span class="nav-number">5.2.</span> <span class="nav-text">keyPath</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictionary-grouping-…"><span class="nav-number">5.3.</span> <span class="nav-text">Dictionary(grouping: …</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dictionary-default-value"><span class="nav-number">5.4.</span> <span class="nav-text">dictionary default value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#One-sided-ranges"><span class="nav-number">5.5.</span> <span class="nav-text">One-sided ranges</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift4-1"><span class="nav-number">6.</span> <span class="nav-text">Swift4.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认支持合成-Equatable-和-Hashable-实现"><span class="nav-number">6.1.</span> <span class="nav-text">默认支持合成 Equatable 和 Hashable 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#targetEnvironment"><span class="nav-number">6.2.</span> <span class="nav-text">targetEnvironment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift4-2"><span class="nav-number">7.</span> <span class="nav-text">Swift4.2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#allCases"><span class="nav-number">7.1.</span> <span class="nav-text">allCases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#warning-error"><span class="nav-number">7.2.</span> <span class="nav-text">#warning #error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamicMemberLookup"><span class="nav-number">7.3.</span> <span class="nav-text">@dynamicMemberLookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加强的条件约束"><span class="nav-number">7.4.</span> <span class="nav-text">加强的条件约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">7.5.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hasher"><span class="nav-number">7.6.</span> <span class="nav-text">Hasher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#allSatisfy"><span class="nav-number">7.7.</span> <span class="nav-text">allSatisfy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#removeAll-where"><span class="nav-number">7.8.</span> <span class="nav-text">removeAll(where:)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toggle"><span class="nav-number">7.9.</span> <span class="nav-text">toggle</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift5-0"><span class="nav-number">8.</span> <span class="nav-text">Swift5.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Raw-strings"><span class="nav-number">8.1.</span> <span class="nav-text">Raw strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">8.2.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-interpolation"><span class="nav-number">8.3.</span> <span class="nav-text">string interpolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamicCallable"><span class="nav-number">8.4.</span> <span class="nav-text">@dynamicCallable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unknown"><span class="nav-number">8.5.</span> <span class="nav-text">@unknown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try"><span class="nav-number">8.6.</span> <span class="nav-text">try?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isMultiple-of"><span class="nav-number">8.7.</span> <span class="nav-text">isMultiple(of:)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compactMapValues"><span class="nav-number">8.8.</span> <span class="nav-text">compactMapValues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift5-1"><span class="nav-number">9.</span> <span class="nav-text">Swift5.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更先进的结构体默认初始化"><span class="nav-number">9.1.</span> <span class="nav-text">更先进的结构体默认初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式-return"><span class="nav-number">9.2.</span> <span class="nav-text">隐式 return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Self"><span class="nav-number">9.3.</span> <span class="nav-text">Self</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#some"><span class="nav-number">9.4.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-and-class-subscripts"><span class="nav-number">9.5.</span> <span class="nav-text">Static and class subscripts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持可选枚举和非可选枚举匹配"><span class="nav-number">9.6.</span> <span class="nav-text">支持可选枚举和非可选枚举匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference-from"><span class="nav-number">9.7.</span> <span class="nav-text">difference(from:)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creating-uninitialized-arrays"><span class="nav-number">9.8.</span> <span class="nav-text">Creating uninitialized arrays</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MJ2009</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'mvMGtXLx2TNI3uKynXIXRf8L-gzGzoHsz',
+        appKey: '9fYTrkKd8BEWcKJmMj4kIEgF',
+        placeholder: 'Leave a comment',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.1.0"></script>
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
