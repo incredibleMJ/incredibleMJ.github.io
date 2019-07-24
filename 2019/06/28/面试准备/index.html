@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="MJ2009">
 <meta property="og:description" content="atomic 线程安全吗 https://blog.csdn.net/u012160319/article/details/89399940不安全 只是getter setter安全 但还有release等操作不一定安全">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-08T09:22:57.820Z">
+<meta property="og:updated_time" content="2019-07-10T12:49:04.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.6月 面试准备">
 <meta name="twitter:description" content="atomic 线程安全吗 https://blog.csdn.net/u012160319/article/details/89399940不安全 只是getter setter安全 但还有release等操作不一定安全">
@@ -528,7 +528,7 @@
 </ul>
 <p>method_exchangeImplementations</p>
 <ul>
-<li><p>runloop <a href="https://blog.ibireme.com/2015/05/18/runloop" target="_blank" rel="noopener">https://blog.ibireme.com/2015/05/18/runloop</a><br>do-while<br>与线程一一对应(第一次获取创建 线程结束销毁)<br>mode(common) observer timer source(0signal标记 wake up唤醒 1主动唤醒)<br>mach_msg<br>AutoreleasePool(observer: entry-&gt;push ,before waiting-&gt; pop push ,exit-&gt; pop )<br>事件响应(Source1 iokit-&gt;iohidevent-&gt;springboard-&gt;macn_port-&gt;app-&gt;uievent)<br>手势识别(Observer before waiting )<br>界面更新(Observer before waiting exit 遍历所有待处理的 UIView/CAlayer)<br>定时器(CFRunLoopTimerRef)<br>PerformSelecter(timer-&gt;线程的runloop)<br>asdk/texture(Observer before waiting exit 遍历)</p>
+<li><p>runloop <a href="https://blog.ibireme.com/2015/05/18/runloop" target="_blank" rel="noopener">https://blog.ibireme.com/2015/05/18/runloop</a> <a href="https://blog.csdn.net/jasonblog/article/details/50899718" target="_blank" rel="noopener">https://blog.csdn.net/jasonblog/article/details/50899718</a><br>do-while<br>与线程一一对应(第一次获取创建 线程结束销毁)<br>mode(common) observer timer source(0signal标记 wake up唤醒 1主动唤醒)<br>mach_msg<br>AutoreleasePool(observer: entry-&gt;push ,before waiting-&gt; pop push ,exit-&gt; pop )<br>事件响应(Source1 iokit-&gt;iohidevent-&gt;springboard-&gt;macn_port-&gt;app-&gt;uievent)<br>手势识别(Observer before waiting )<br>界面更新(Observer before waiting exit 遍历所有待处理的 UIView/CAlayer)<br>定时器(CFRunLoopTimerRef)<br>PerformSelecter(timer-&gt;线程的runloop)<br>asdk/texture(Observer before waiting exit 遍历)</p>
 </li>
 <li><p>多线程 <a href="http://xuyafei.cn/post/draft/ios-thread" target="_blank" rel="noopener">http://xuyafei.cn/post/draft/ios-thread</a><br>PTheard<br>NSThread<br>GCD<br>NSOperation(NSBlockOperation NSInvocationOperation NSOperationQueue)</p>
 </li>
@@ -747,7 +747,7 @@ GET 请求指定的页面信息，并返回实体主体。 HEAD 类似于get�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
