@@ -99,25 +99,33 @@
 
 
 
-  <meta name="description" content="1.更新 Clover ，更新完成后挂载 EFI 分区 1. 替换 config.plist  2. 替换 drivers64UEFI  3. 替换 kexts 4. 如果升级至 10.13 及以上系统，需添加 apfs.efi 至 drivers64UEFI 文件夹下 5. 更新 FakeSMC">
+  <meta name="description" content="Mac OS安装方案确定">
 <meta name="keywords" content="系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="更新黑苹果">
-<meta property="og:url" content="https://incrediblemj.github.io/2018/08/04/更新黑苹果/index.html">
+<meta property="og:title" content="Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结">
+<meta property="og:url" content="https://incrediblemj.github.io/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/index.html">
 <meta property="og:site_name" content="MJ2009">
-<meta property="og:description" content="1.更新 Clover ，更新完成后挂载 EFI 分区 1. 替换 config.plist  2. 替换 drivers64UEFI  3. 替换 kexts 4. 如果升级至 10.13 及以上系统，需添加 apfs.efi 至 drivers64UEFI 文件夹下 5. 更新 FakeSMC">
+<meta property="og:description" content="Mac OS安装方案确定">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-08T09:22:57.819Z">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/e5450be8gy1flkti89zvnj21hc0u0npe.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/e5450be8gy1flkti2thdqj21hc0u07wh.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/e5450be8gy1flkthwurdpj20g609sdi9.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g63re0at92j30wq0jm44n.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g63rfmrf3yj31220u0jzz.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g63rfwe03rj31hc0u0kju.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g63rg7llb1j31hc0u0kjp.jpg">
+<meta property="og:updated_time" content="2019-08-23T01:38:15.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="更新黑苹果">
-<meta name="twitter:description" content="1.更新 Clover ，更新完成后挂载 EFI 分区 1. 替换 config.plist  2. 替换 drivers64UEFI  3. 替换 kexts 4. 如果升级至 10.13 及以上系统，需添加 apfs.efi 至 drivers64UEFI 文件夹下 5. 更新 FakeSMC">
+<meta name="twitter:title" content="Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结">
+<meta name="twitter:description" content="Mac OS安装方案确定">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/e5450be8gy1flkti89zvnj21hc0u0npe.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://incrediblemj.github.io/2018/08/04/更新黑苹果/">
+  <link rel="canonical" href="https://incrediblemj.github.io/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/">
 
 
 
@@ -127,7 +135,7 @@
   };
 </script>
 
-  <title>更新黑苹果 | MJ2009</title>
+  <title>Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结 | MJ2009</title>
   
 
 
@@ -329,7 +337,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://incrediblemj.github.io/2018/08/04/更新黑苹果/">
+    <link itemprop="mainEntityOfPage" href="https://incrediblemj.github.io/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MJ2009">
@@ -346,7 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">更新黑苹果</h1>
+          <h1 class="post-title" itemprop="name headline">Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结</h1>
         
 
         <div class="post-meta">
@@ -358,7 +366,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T21:09:56+08:00">2018-08-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:00+08:00">2018-09-01</time>
             
 
             
@@ -394,8 +402,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/04/更新黑苹果/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/04/更新黑苹果/" itemprop="commentCount"></span>
+                <a href="/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,19 +431,79 @@
       
 
       
-        <p>1.更新 Clover ，更新完成后挂载 EFI 分区</p>
-<pre><code>1. 替换 config.plist 
-2. 替换 drivers64UEFI 
-3. 替换 kexts
-4. 如果升级至 10.13 及以上系统，需添加 apfs.efi 至 drivers64UEFI 文件夹下
-5. 更新 FakeSMC</code></pre><a id="more"></a>
-<p>2.App Store直接更新</p>
-<pre><code>这里会出现很多问题，具体情况看 -v log 分析
-其实还是推荐找相近配置的 EFI 文件夹替换最省心</code></pre><p>3.系统更新完成后，更新 WebDriver，这个一般安装完会自动弹出来，没有弹出来去系统设置看看有没有 Nvidia Driver 面板 ，再没有的话就去下载相应的 WebDriver 安装，或用对应的更新工具更新 WebDriver</p>
-<p>4.修改 apfs.efi 避免开机读码</p>
-<pre><code>1. 拷贝 /usr/standalone/i386/ 下 apfs.efi 至桌面
-2. sudo perl -i -pe &apos;s|\x00\x74\x07\xb8\xff\xff|\x00\x90\x90\xb8\xff\xff|sg&apos; /你存放的路径/apfs.efi
-3. 将修改后的 apfs.efi 替换到 drivers64UEFI 文件夹下</code></pre><p>5.其他优化(主要看看 CPU 显卡 是不是正常驱动起来了, 电源管理是不是正常 能不能睡眠 睡眠后能不能唤醒, 重启会不会出问题等)</p>
+        <h2 id="Mac-OS"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS</h2><h3 id="安装方案确定"><a href="#安装方案确定" class="headerlink" title="安装方案确定"></a>安装方案确定</h3><a id="more"></a>
+
+<pre><code>1. UEFI 还是 BIOS ? GPT 还是 MBR ? 
+
+    - UEFI 和 BIOS 都是引导方式，BIOS 是较老的方式，推荐 UEFI
+
+    - GPT 和 MBR 都是磁盘分区格式，MBR 是比较老的方式，推荐 GPT
+
+2. Clover 还是 变色龙 ？
+
+    - Clover 和 变色龙 都是 引导工具，用来启动 Mac OS 或 Windows
+
+    - 变色龙配置较麻烦，对安装人员要求较高，安装效果还不见得比 Clover 好 
+
+    - Clover 稍微简单点，可以通过一些配置解决大部分问题，推荐 Clover
+
+3. 原版镜像还是懒人版 ？
+
+    - 原版镜像对官方镜像修改较少，只添加一些必要驱动和破解补丁，自己按需加驱动
+
+    - 懒人版就是加入大量驱动，做了较多修改，不用怎么改可能就安装成功了，但没有原版镜像安装稳定，推荐原版
+
+    - 一般原版会比懒人版稳定，推荐原版</code></pre><p>==总结：UEFI + GPT Clover + 原版镜像==</p>
+<h3 id="安装步骤概要"><a href="#安装步骤概要" class="headerlink" title="安装步骤概要"></a>安装步骤概要</h3><pre><code>1. 制作启动U盘，有相应工具，这里不展开介绍
+
+    * 注意 Clover 版本，尽量用较新版本
+    * 注意 EFI/CLOVER/drivers64UEFI 文件夹下文件，这个与硬件相关
+    * 注意 EFI/CLOVER/kexts 文件夹下文件，这些是自己加的驱动，硬件相关
+    * 配置 EFI/CLOVER/config.plist ,硬件相关
+
+    EFI 文件夹配置最简单的方式就是找一个与自己电脑配置差不多的成功案例，将他的 EFI 文件夹拿过来用，然后看报错信息做相应修改
+
+    运气好的话，应该可以进安装界面了
+
+2. 在安装界面找到磁盘工具，将分区或磁盘格式化为 HFS 格式
+
+3. 选择新格式化好的用来安装 Mac OS 的分区，开始安装 (不是 GPT 分区的先重新分区，再格式化)
+
+4. 进入系统后，用相应软件安装 Mac 版 Clover ，安装成功后将U盘里的 EFI 文件夹替换 Mac 盘下 EFI分区对应文件夹
+
+经过上面几步应该可以初步使用了，下面的步骤就是优化阶段，驱动显卡 网卡 声卡等</code></pre><p>==总结：启动U盘是关键==</p>
+<h3 id="后期优化"><a href="#后期优化" class="headerlink" title="后期优化"></a>后期优化</h3><pre><code>1. 显卡
+
+    我的是 Nvidia 显卡，用的是官方的 web driver , 下载对应系统版本号的驱动就好了 (如遇到重启后黑屏，在 EFI/CLOVER/kexts/Other 文件夹下放入 lilu.kext NvidiaGraphicsFixup.kext NVWebDriverLibValFix.kext)
+
+2. 网卡找自己网卡型号对应的驱动装上就好了
+
+3. 声卡用的是万能驱动 VoodooHDA
+
+4. 还有一些诸如 config.plist 优化 DSDT SSDT 电源管理 USB3.0 BIOS设置 等细节优化就不展开了，具体情况具体分析</code></pre><p>==总结：显卡驱动是关键==</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/e5450be8gy1flkti89zvnj21hc0u0npe.jpg" alt></p>
+<p><img src="https://wx2.sinaimg.cn/mw690/e5450be8gy1flkti2thdqj21hc0u07wh.jpg" alt></p>
+<p><img src="https://wx3.sinaimg.cn/mw690/e5450be8gy1flkthwurdpj20g609sdi9.jpg" alt></p>
+<h2 id="更新至10-14-6"><a href="#更新至10-14-6" class="headerlink" title="更新至10.14.6"></a>更新至10.14.6</h2><p>macOS 从 10.14 开始不支持 NVIDIA Web Driver ， 所以要升级的建议更换 AMD 显卡，免驱的，但也要选正规大厂的较新型号显卡</p>
+<p>这边总结下我用 蓝宝石RX590 升级的一些注意事项</p>
+<ol>
+<li>原生免驱显卡直接升级一般可以进系统，建议升级成功后把NVIDIA相关驱动删除</li>
+<li>将Clover和用到的驱动尽量更新到最新版本</li>
+<li>目前10.14.6开机会出现紫条，但不影响使用，有解决方案的可以在评论区留言</li>
+<li>目前硬解和睡眠有点问题，睡眠后会唤起显卡，显卡风扇一段时间就会转一次，但显示器不会唤起，移动鼠标也能正常唤醒，有解决方案的评论区留言，谢谢</li>
+</ol>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g63re0at92j30wq0jm44n.jpg" alt></p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g63rfmrf3yj31220u0jzz.jpg" alt></p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g63rfwe03rj31hc0u0kju.jpg" alt></p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g63rg7llb1j31hc0u0kjp.jpg" alt></p>
+<h2 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h2><ol>
+<li><p>Windows 10 官方出的U盘制作工具很给力，推荐装原版，进入系统后用 KMS 激活就好了</p>
+</li>
+<li><p>双硬盘的情况应先卸掉一张硬盘，保留一张主硬盘连接，因为 Windows 10 安装程序识别到有 EFI 分区了不会再新建了，如果 EFI 在副硬盘上，那么系统将从副硬盘引导，所以先只连接主硬盘，确保系统从主硬盘引导启动</p>
+</li>
+<li><p>遇到无法安装的情况，在安装界面 按下 shift + F10 打开命令行工具，利用  diskpart 重新分区 (注意格式化为 GPT , 创建 efi 、 msr 分区 以及你的其他分区)</p>
+</li>
+</ol>
 
       
     </div>
@@ -457,7 +525,7 @@
     <strong>本文作者： </strong>MJ2009</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://incrediblemj.github.io/2018/08/04/更新黑苹果/" title="更新黑苹果">https://incrediblemj.github.io/2018/08/04/更新黑苹果/</a>
+    <a href="https://incrediblemj.github.io/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/" title="Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结">https://incrediblemj.github.io/2018/09/01/Win10 + macOS Sierra(10.12.6 16G29) 双系统安装总结/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -483,8 +551,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/05/const-static-extern-UIKIT-EXTERN/" rel="next" title="const static extern UIKIT_EXTERN">
-                <i class="fa fa-chevron-left"></i> const static extern UIKIT_EXTERN
+              <a href="/2018/08/04/更新黑苹果(10.13.6 GTX1060)/" rel="next" title="更新黑苹果(10.13.6 GTX1060)">
+                <i class="fa fa-chevron-left"></i> 更新黑苹果(10.13.6 GTX1060)
               </a>
             
           </div>
@@ -547,8 +615,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,7 +640,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -673,6 +750,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-OS"><span class="nav-number">1.</span> <span class="nav-text">Mac OS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装方案确定"><span class="nav-number">1.1.</span> <span class="nav-text">安装方案确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤概要"><span class="nav-number">1.2.</span> <span class="nav-text">安装步骤概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后期优化"><span class="nav-number">1.3.</span> <span class="nav-text">后期优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新至10-14-6"><span class="nav-number">2.</span> <span class="nav-text">更新至10.14.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-10"><span class="nav-number">3.</span> <span class="nav-text">Windows 10</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
