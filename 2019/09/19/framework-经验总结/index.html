@@ -108,14 +108,14 @@
 <meta property="og:description" content="SDK 简介SDK 其实就是把一些通用代码的二进制、资源文件、和头文件打包起来使用，这样做主要有两个好处：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euw1qxvtj30gs095ab4.jpg">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-d2b804cfbb5af266.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-f2d3731a0e17adef.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-b3096d7673e6e094.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-7910363c5c252b07.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-b949ea0bf93c3784.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3112278-a5b819650f28eb34.png">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euycv106j30u70bwjug.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euyucfnsj30jx0e3wgb.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euzkizkpj30ej07rjsf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euzz6d08j30ij076wex.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ev0g382rj30jx0brwg0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ev0z3gclj30js0bkjsl.jpg">
 <meta property="og:image" content="https://yangjie2.github.io/2018/08/07/%E4%BD%BF%E7%94%A8cocoapods%E6%8F%92%E4%BB%B6%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E5%BA%93%E2%80%94%E2%80%94%E9%80%82%E7%94%A8%E4%BA%8E%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96%E7%A7%81%E6%9C%89%E5%BA%93%E3%80%81%E5%BC%80%E6%BA%90%E5%BA%93%EF%BC%8C%E7%A7%81%E6%9C%89%E5%BA%93%E5%8F%88%E4%BE%9D%E8%B5%96%E9%9D%99%E6%80%81%E5%BA%93%E7%AD%89%E5%A4%8D%E6%9D%82%E5%9C%BA%E6%99%AF/pod%E5%BA%93%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2019-10-29T02:22:11.268Z">
+<meta property="og:updated_time" content="2019-10-29T02:27:49.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="framework-经验总结">
 <meta name="twitter:description" content="SDK 简介SDK 其实就是把一些通用代码的二进制、资源文件、和头文件打包起来使用，这样做主要有两个好处：">
@@ -467,14 +467,14 @@
 <li><p>打包。Edit Scheme-&gt;Build Configuration-&gt;选为 Release 然后 Build 即可</p>
 </li>
 </ol>
-<p>注意：自己的SDK最好在每个类名前加个前缀，以防止下面未来可能发生的重复引入错误<br><img src="https://upload-images.jianshu.io/upload_images/3112278-d2b804cfbb5af266.png" alt></p>
+<p>注意：自己的SDK最好在每个类名前加个前缀，以防止下面未来可能发生的重复引入错误<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euycv106j30u70bwjug.jpg" alt></p>
 <p>附加：这样做出来的framework只能在模拟器或者真机上用，要想都可以用，请看下步</p>
 <h5 id="2️⃣-合并SDK-（暂不需要合并的同学请跳过此步）"><a href="#2️⃣-合并SDK-（暂不需要合并的同学请跳过此步）" class="headerlink" title="2️⃣.合并SDK （暂不需要合并的同学请跳过此步）"></a>2️⃣.合并SDK （暂不需要合并的同学请跳过此步）</h5><ol>
-<li><p>在你的SDK项目中新建add target -&gt; other -&gt; Aggregate Target<br><img src="https://upload-images.jianshu.io/upload_images/3112278-f2d3731a0e17adef.png" alt></p>
+<li><p>在你的SDK项目中新建add target -&gt; other -&gt; Aggregate Target<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euyucfnsj30jx0e3wgb.jpg" alt></p>
 </li>
-<li><p>添加script到新建的Target<br><img src="https://upload-images.jianshu.io/upload_images/3112278-b3096d7673e6e094.png" alt></p>
+<li><p>添加script到新建的Target<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euzkizkpj30ej07rjsf.jpg" alt></p>
 </li>
-<li><p>复制下面提供的脚本，我实现是把以下脚本放入一个txt文件中，然后再拖进去运行的，方法自己选。运行之后会自动打开合并之后的framework文件，注意不要勾选Run script only when installing<br><img src="https://upload-images.jianshu.io/upload_images/3112278-7910363c5c252b07.png" alt><br>脚本：</p>
+<li><p>复制下面提供的脚本，我实现是把以下脚本放入一个txt文件中，然后再拖进去运行的，方法自己选。运行之后会自动打开合并之后的framework文件，注意不要勾选Run script only when installing<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8euzz6d08j30ij076wex.jpg" alt><br>脚本：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># Sets the target folders and the finalframework product.</span><br><span class="line"># 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME</span><br><span class="line"># 例如: FMK_NAME = &quot;MyFrameWork&quot;</span><br><span class="line">FMK_NAME=$&#123;PROJECT_NAME&#125;</span><br><span class="line"># Install dir will be the final output tothe framework.</span><br><span class="line"># The following line create it in the rootfolder of the current project.</span><br><span class="line">INSTALL_DIR=$&#123;SRCROOT&#125;/Products/$&#123;FMK_NAME&#125;.framework</span><br><span class="line"># Working dir will be deleted after theframework creation.</span><br><span class="line">WRK_DIR=build</span><br><span class="line">DEVICE_DIR=$&#123;WRK_DIR&#125;/Release-iphoneos/$&#123;FMK_NAME&#125;.framework</span><br><span class="line">SIMULATOR_DIR=$&#123;WRK_DIR&#125;/Release-iphonesimulator/$&#123;FMK_NAME&#125;.framework</span><br><span class="line"># -configuration $&#123;CONFIGURATION&#125;</span><br><span class="line"># Clean and Building both architectures.</span><br><span class="line">xcodebuild -configuration &quot;Release&quot; -target &quot;$&#123;FMK_NAME&#125;&quot; -sdk iphoneos -arch armv7 -arch armv7s -arch arm64 -arch arm64e</span><br><span class="line">clean build</span><br><span class="line">xcodebuild -configuration &quot;Release&quot; -target &quot;$&#123;FMK_NAME&#125;&quot; -sdk</span><br><span class="line">iphonesimulator clean build</span><br><span class="line"># Cleaning the oldest.</span><br><span class="line">if [ -d &quot;$&#123;INSTALL_DIR&#125;&quot; ]</span><br><span class="line">then</span><br><span class="line">rm -rf &quot;$&#123;INSTALL_DIR&#125;&quot;</span><br><span class="line">fi</span><br><span class="line">mkdir -p &quot;$&#123;INSTALL_DIR&#125;&quot;</span><br><span class="line">cp -R &quot;$&#123;DEVICE_DIR&#125;/&quot; &quot;$&#123;INSTALL_DIR&#125;/&quot;</span><br><span class="line"># Uses the Lipo Tool to merge both binaryfiles (i386 + armv6/armv7) into one Universal final product.</span><br><span class="line">lipo -create&quot;$&#123;DEVICE_DIR&#125;/$&#123;FMK_NAME&#125;&quot; &quot;$&#123;SIMULATOR_DIR&#125;/$&#123;FMK_NAME&#125;&quot; -</span><br><span class="line">output &quot;$&#123;INSTALL_DIR&#125;/$&#123;FMK_NAME&#125;&quot;</span><br><span class="line">rm -r &quot;$&#123;WRK_DIR&#125;&quot;</span><br><span class="line">open &quot;$&#123;INSTALL_DIR&#125;&quot;</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -493,7 +493,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">模拟器:</span><br><span class="line">4s-5: i386</span><br><span class="line">5s-6s Plus: x86_64</span><br><span class="line">真机:</span><br><span class="line">armv6: iPhone、iPhone 2、iPhone 3G、iPod Touch(第一代)、iPod Touch(第二代)</span><br><span class="line">armv7: iPhone 3Gs、iPhone 4、iPhone 4s、iPad、iPad 2</span><br><span class="line">armv7s: iPhone 5、iPhone 5c</span><br><span class="line">arm64: iPhone 5s、iPhone 6、iPhone 6 Plus、iPhone 6s、iPhone 6s Plus、iPad Air、iPad Air2、iPad mini2、iPad mini3</span><br></pre></td></tr></table></figure>
 
 <h5 id="3️⃣-生成bundle文件"><a href="#3️⃣-生成bundle文件" class="headerlink" title="3️⃣.生成bundle文件"></a>3️⃣.生成bundle文件</h5><ol>
-<li>新建OS X-&gt;Framework &amp; Library-&gt;Bundle<br><img src="https://upload-images.jianshu.io/upload_images/3112278-b949ea0bf93c3784.png" alt></li>
+<li>新建OS X-&gt;Framework &amp; Library-&gt;Bundle<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ev0g382rj30jx0brwg0.jpg" alt></li>
 <li>在TARGTS-&gt;Build Settings-&gt;Deployment-&gt;iOS Deployment Target-&gt;选择自己需要支持的最低系统</li>
 <li>build后会生成一个bundle包，但在包中的图片由以前的png格式全部变成tiff格式。为了防止这种格式转变。需要在Build Settings-&gt;Architectures-&gt;Base SDK-&gt;选择iOS的SDK要支持的版本。这时TARGETS中Build Setting-&gt;User-Defined中会出现一个新的Key：COMBINE_HIDPI_DEBUG_INFO,把它设置为NO</li>
 <li>关于怎么取资源 提供LHBundleTool类获得</li>
@@ -518,7 +518,7 @@
 <li><p>自己再新开一个项目加入自己的SDK，测试代码</p>
 </li>
 </ol>
-<h5 id="5️⃣-第三方冲突的问题"><a href="#5️⃣-第三方冲突的问题" class="headerlink" title="5️⃣.第三方冲突的问题"></a>5️⃣.第三方冲突的问题</h5><p>有些必要的框架可能你SDK里面使用到了，项目工程里面也用到了，例如常用的AF,SD,MB等等，会有冲突。暂时自己的解决方案，在编写SDK引入框架的时候<br><img src="https://upload-images.jianshu.io/upload_images/3112278-a5b819650f28eb34.png" alt></p>
+<h5 id="5️⃣-第三方冲突的问题"><a href="#5️⃣-第三方冲突的问题" class="headerlink" title="5️⃣.第三方冲突的问题"></a>5️⃣.第三方冲突的问题</h5><p>有些必要的框架可能你SDK里面使用到了，项目工程里面也用到了，例如常用的AF,SD,MB等等，会有冲突。暂时自己的解决方案，在编写SDK引入框架的时候<br><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8ev0z3gclj30js0bkjsl.jpg" alt></p>
 <p>以上：基本流程讲完了，重点是资源管理这一块，图片、xib、音视频等用bundle管理后，framework内访问资源的方式都要改成从具体的bundle访问，而不再是 mainBundle</p>
 <h3 id="CocoaPods-创建-framework"><a href="#CocoaPods-创建-framework" class="headerlink" title="CocoaPods 创建 framework"></a>CocoaPods 创建 framework</h3><blockquote>
 <p><a href="https://guides.cocoapods.org/making/using-pod-lib-create.html" target="_blank" rel="noopener">官方文档</a></p>
